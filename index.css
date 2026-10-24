@@ -1,6 +1,7 @@
-*{
+* {
   -webkit-tap-highlight-color: transparent;
 }
+
 :root {
   color-scheme: dark;
   --background: #101214;
@@ -360,6 +361,65 @@ main section svg {
   margin-bottom: 0;
 }
 
+/* قسم التسجيل الصوتي */
+
+#sadat-audio {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
+  align-items: center;
+  gap: 45px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-right: 3px solid var(--copper);
+  background:
+    radial-gradient(ellipse at left center, rgba(7, 59, 58, 0.32), transparent 65%),
+    var(--surface);
+  padding: 55px;
+  margin-top: 55px;
+  margin-bottom: 55px;
+}
+
+#sadat-audio > div:first-child > p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--copper);
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+#sadat-audio h2 {
+  margin-bottom: 15px;
+}
+
+#sadat-audio > div:first-child > p:last-child {
+  max-width: 600px;
+  margin-bottom: 0;
+}
+
+#sadat-audio > div:last-child {
+  min-width: 0;
+  padding: 24px;
+  background: rgba(16, 18, 20, 0.72);
+  border: 1px solid var(--border);
+}
+
+#sadat-audio audio {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 15px;
+  accent-color: var(--copper);
+}
+
+#sadat-audio > div:last-child p {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
+}
+
 footer {
   text-align: center;
   padding: 45px 20px;
@@ -456,6 +516,12 @@ footer a:hover {
   #heroes {
     grid-template-columns: 1fr;
   }
+
+  #sadat-audio {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 35px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -519,6 +585,21 @@ footer a:hover {
 
   #timeline article {
     padding: 20px;
+  }
+
+  #sadat-audio {
+    padding: 24px 18px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    gap: 20px;
+  }
+
+  #sadat-audio h2 {
+    font-size: 27px;
+  }
+
+  #sadat-audio > div:last-child {
+    padding: 15px 10px;
   }
 
   main section h1 {
