@@ -1,20 +1,19 @@
-
 const menu = document.querySelector("#toggle-menu");
 const menuLinks = document.querySelectorAll("nav ul a");
 
-menuLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (menu.checked) {
+if (menu) {
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.checked = false;
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu.checked) {
       menu.checked = false;
     }
   });
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && menu.checked) {
-    menu.checked = false;
-  }
-});
+}
 
 const style = document.createElement("style");
 
@@ -66,12 +65,14 @@ style.textContent = `
     background: rgba(5, 7, 8, 0.94);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
   #character-viewer[data-open="true"] {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   #character-viewer img {
@@ -159,7 +160,7 @@ viewerImage.alt = "";
 
 const closeButton = document.createElement("button");
 closeButton.type = "button";
-closeButton.innerHTML = "&times;";
+closeButton.textContent = "×";
 closeButton.setAttribute("aria-label", "إغلاق الصورة");
 
 const caption = document.createElement("p");
