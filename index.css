@@ -1,20 +1,16 @@
-
 * {
   -webkit-tap-highlight-color: transparent;
 }
 
 :root {
   color-scheme: dark;
-  --background: #101010;
-  --surface: #191919;
-  --text: #f5f2ed;
-  --muted: #c1bdb6;
-  --red: #ce2028;
-  --white: #f5f2ed;
-  --black: #101010;
-  --gold: #d6ad60;
+  --background: #101214;
+  --surface: #171a1d;
+  --text: #f1eee8;
+  --muted: #b4b0a8;
+  --copper: #c89a63;
   --teal: #073b3a;
-  --border: rgba(206, 32, 40, 0.28);
+  --border: rgba(200, 154, 99, 0.22);
 }
 
 * {
@@ -53,14 +49,13 @@ svg {
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(16, 16, 16, 0.96);
-  border-bottom: 2px solid var(--red);
+  z-index: 10;
+  background: rgba(16, 18, 20, 0.96);
+  border-bottom: 1px solid var(--border);
   backdrop-filter: blur(14px);
 }
 
 nav {
-  position: relative;
   width: min(1200px, 92%);
   min-height: 82px;
   margin: auto;
@@ -74,7 +69,7 @@ nav > a {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--white);
+  color: var(--copper);
   font-size: 19px;
   font-weight: bold;
   white-space: nowrap;
@@ -110,7 +105,7 @@ nav li a {
 
 nav li a:hover,
 nav li a:focus-visible {
-  color: var(--red);
+  color: var(--copper);
 }
 
 main section {
@@ -129,7 +124,7 @@ main section > div > p:first-child {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--red);
+  color: var(--copper);
   font-size: 14px;
   margin-bottom: 16px;
 }
@@ -139,7 +134,6 @@ main section h1 {
   line-height: 1.25;
   margin-bottom: 10px;
   letter-spacing: -2px;
-  color: var(--white);
 }
 
 main section h2 {
@@ -150,7 +144,7 @@ main section h2 {
 }
 
 main section h3 {
-  color: var(--red);
+  color: var(--copper);
   font-size: 21px;
   margin-bottom: 10px;
 }
@@ -160,7 +154,7 @@ main section p {
 }
 
 main section svg {
-  color: var(--gold);
+  color: var(--copper);
 }
 
 #home {
@@ -183,12 +177,11 @@ main section svg {
   height: 520px;
   object-fit: cover;
   border-radius: 3px;
-  border: 1px solid rgba(214, 173, 96, 0.45);
-  border-bottom: 4px solid var(--red);
+  border: 1px solid var(--border);
 }
 
 #home h1 {
-  color: var(--red);
+  color: var(--copper);
 }
 
 #home h2 {
@@ -214,7 +207,7 @@ main section svg {
   gap: 16px;
   background: var(--surface);
   padding: 20px;
-  border-right: 3px solid var(--red);
+  border-right: 2px solid var(--copper);
 }
 
 #home > div:nth-of-type(2) {
@@ -237,7 +230,7 @@ main section svg {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--gold);
+  color: var(--copper);
   white-space: nowrap;
 }
 
@@ -267,7 +260,6 @@ main section svg {
   height: 360px;
   object-fit: cover;
   border: 1px solid var(--border);
-  border-bottom: 3px solid var(--red);
 }
 
 #about figcaption,
@@ -282,7 +274,7 @@ main section svg {
   grid-column: 1 / -1;
   padding: 28px;
   background: var(--surface);
-  border-right: 3px solid var(--red);
+  border-right: 2px solid var(--copper);
 }
 
 #about > div:last-child h3,
@@ -316,7 +308,6 @@ main section svg {
   align-items: start;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-top: 2px solid var(--red);
   padding: 18px;
 }
 
@@ -330,7 +321,6 @@ main section svg {
 
 #heroes article h3 {
   margin-top: 2px;
-  color: var(--gold);
 }
 
 #heroes article p {
@@ -352,14 +342,14 @@ main section svg {
 #timeline article {
   padding: 25px;
   background: var(--surface);
-  border-right: 3px solid var(--red);
+  border-right: 2px solid var(--copper);
 }
 
 #timeline article > p:first-child {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--gold);
+  color: var(--copper);
   font-size: 14px;
 }
 
@@ -371,6 +361,8 @@ main section svg {
   margin-bottom: 0;
 }
 
+/* قسم التسجيل الصوتي */
+
 #sadat-audio {
   position: relative;
   display: grid;
@@ -379,15 +371,9 @@ main section svg {
   gap: 45px;
   overflow: hidden;
   border: 1px solid var(--border);
-  border-right: 4px solid var(--red);
+  border-right: 3px solid var(--copper);
   background:
-    linear-gradient(
-      135deg,
-      rgba(206, 32, 40, 0.12),
-      transparent 45%,
-      rgba(245, 242, 237, 0.04) 70%,
-      rgba(0, 0, 0, 0.3)
-    ),
+    radial-gradient(ellipse at left center, rgba(7, 59, 58, 0.32), transparent 65%),
     var(--surface);
   padding: 55px;
   margin-top: 55px;
@@ -398,7 +384,7 @@ main section svg {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--gold);
+  color: var(--copper);
   font-size: 14px;
   margin-bottom: 14px;
 }
@@ -415,7 +401,7 @@ main section svg {
 #sadat-audio > div:last-child {
   min-width: 0;
   padding: 24px;
-  background: rgba(16, 16, 16, 0.85);
+  background: rgba(16, 18, 20, 0.72);
   border: 1px solid var(--border);
 }
 
@@ -424,7 +410,7 @@ main section svg {
   width: 100%;
   max-width: 100%;
   margin: 0 auto 15px;
-  accent-color: var(--red);
+  accent-color: var(--copper);
 }
 
 #sadat-audio > div:last-child p {
@@ -435,12 +421,10 @@ main section svg {
 }
 
 footer {
-  position: relative;
   text-align: center;
   padding: 45px 20px;
   color: var(--muted);
   font-size: 13px;
-  overflow: hidden;
 }
 
 footer p {
@@ -448,59 +432,11 @@ footer p {
 }
 
 footer a {
-  color: var(--red);
-  transition: color 0.25s ease;
+  color: var(--copper);
 }
 
 footer a:hover {
-  color: var(--gold);
   text-decoration: underline;
-}
-
-footer p:last-child {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: fit-content;
-  max-width: 100%;
-  margin: 20px auto 0;
-  padding: 10px 22px;
-  color: var(--text);
-  background: linear-gradient(
-    110deg,
-    rgba(206, 32, 40, 0.13),
-    rgba(245, 242, 237, 0.035) 48%,
-    rgba(0, 0, 0, 0.55)
-  );
-  border: 1px solid rgba(214, 173, 96, 0.3);
-  border-right: 3px solid var(--red);
-  border-radius: 2px;
-  transform: skew(-5deg);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-footer p:last-child::before {
-  content: "";
-  display: block;
-  flex: 0 0 30px;
-  width: 30px;
-  height: 20px;
-  background: linear-gradient(
-    to bottom,
-    #ce2028 0 33.33%,
-    #f5f2ed 33.33% 66.66%,
-    #101010 66.66% 100%
-  );
-  transform: skew(-8deg) rotate(-8deg);
-  border: 1px solid rgba(214, 173, 96, 0.35);
-  box-shadow: 2px 2px 0 rgba(206, 32, 40, 0.18);
-}
-
-footer p:last-child a {
-  color: var(--gold);
-  font-weight: bold;
 }
 
 @media (max-width: 900px) {
@@ -517,24 +453,11 @@ footer p:last-child a {
 
   nav ul {
     display: none;
-    position: absolute;
-    top: calc(100% - 1px);
-    right: 0;
-    width: min(280px, 90vw);
+    flex-basis: 100%;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 8px 16px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-top: 2px solid var(--red);
-    border-radius: 0 0 6px 6px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
-    z-index: 101;
-  }
-
-  nav input:checked ~ ul {
-    display: flex;
+    padding-top: 10px;
   }
 
   nav ul li a {
@@ -543,8 +466,8 @@ footer p:last-child a {
     border-bottom: 1px solid var(--border);
   }
 
-  nav ul li:last-child a {
-    border-bottom: none;
+  nav input:checked ~ ul {
+    display: flex;
   }
 
   #home {
@@ -681,17 +604,5 @@ footer p:last-child a {
 
   main section h1 {
     letter-spacing: 0;
-  }
-
-  footer p:last-child {
-    gap: 8px;
-    padding: 9px 13px;
-    font-size: 12px;
-  }
-
-  footer p:last-child::before {
-    flex-basis: 25px;
-    width: 25px;
-    height: 17px;
   }
 }
