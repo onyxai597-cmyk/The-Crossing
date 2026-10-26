@@ -1,22 +1,22 @@
+
 * {
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
   color-scheme: dark;
-  --background: #101214;
-  --surface: #171a1d;
-  --text: #f1eee8;
-  --muted: #b4b0a8;
-  --copper: #c89a63;
-  --teal: #073b3a;
-  --border: rgba(200, 154, 99, 0.22);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  --background: #101010;
+  --surface: #191919;
+  --text: #f5f2ed;
+  --muted: #c1bdb6;
+  --red: #ce2028;
+  --white: #f5f2ed;
+  --black: #101010;
+  --gold: #d6ad60;
+  --border: rgba(206, 32, 40, 0.28);
 }
 
 html {
@@ -49,13 +49,14 @@ svg {
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(16, 18, 20, 0.96);
-  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  background: rgba(16, 16, 16, 0.96);
+  border-bottom: 2px solid var(--red);
   backdrop-filter: blur(14px);
 }
 
 nav {
+  position: relative;
   width: min(1200px, 92%);
   min-height: 82px;
   margin: auto;
@@ -69,7 +70,7 @@ nav > a {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--copper);
+  color: var(--white);
   font-size: 19px;
   font-weight: bold;
   white-space: nowrap;
@@ -88,6 +89,7 @@ nav input {
 nav label {
   display: none;
   cursor: pointer;
+  color: var(--white);
 }
 
 nav ul {
@@ -105,7 +107,7 @@ nav li a {
 
 nav li a:hover,
 nav li a:focus-visible {
-  color: var(--copper);
+  color: var(--red);
 }
 
 main section {
@@ -118,18 +120,20 @@ main section {
 
 main section p {
   color: var(--muted);
+  margin-bottom: 17px;
 }
 
 main section > div > p:first-child {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--copper);
+  color: var(--red);
   font-size: 14px;
   margin-bottom: 16px;
 }
 
 main section h1 {
+  color: var(--white);
   font-size: clamp(44px, 8vw, 88px);
   line-height: 1.25;
   margin-bottom: 10px;
@@ -144,17 +148,13 @@ main section h2 {
 }
 
 main section h3 {
-  color: var(--copper);
+  color: var(--red);
   font-size: 21px;
   margin-bottom: 10px;
 }
 
-main section p {
-  margin-bottom: 17px;
-}
-
 main section svg {
-  color: var(--copper);
+  color: var(--gold);
 }
 
 #home {
@@ -162,7 +162,7 @@ main section svg {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
-  gap: 45px;
+  gap: 25px 45px;
 }
 
 #home > div:first-child {
@@ -172,16 +172,17 @@ main section svg {
 
 #home > img {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
   width: 100%;
   height: 520px;
   object-fit: cover;
   border-radius: 3px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(214, 173, 96, 0.4);
+  border-bottom: 4px solid var(--red);
 }
 
 #home h1 {
-  color: var(--copper);
+  color: var(--red);
 }
 
 #home h2 {
@@ -207,13 +208,12 @@ main section svg {
   gap: 16px;
   background: var(--surface);
   padding: 20px;
-  border-right: 2px solid var(--copper);
+  border-right: 3px solid var(--red);
 }
 
 #home > div:nth-of-type(2) {
   grid-row: 2;
   align-self: end;
-  margin-top: 15px;
 }
 
 #home > div:nth-of-type(3) {
@@ -230,7 +230,7 @@ main section svg {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--copper);
+  color: var(--gold);
   white-space: nowrap;
 }
 
@@ -260,6 +260,7 @@ main section svg {
   height: 360px;
   object-fit: cover;
   border: 1px solid var(--border);
+  border-bottom: 3px solid var(--red);
 }
 
 #about figcaption,
@@ -274,7 +275,7 @@ main section svg {
   grid-column: 1 / -1;
   padding: 28px;
   background: var(--surface);
-  border-right: 2px solid var(--copper);
+  border-right: 3px solid var(--red);
 }
 
 #about > div:last-child h3,
@@ -308,6 +309,7 @@ main section svg {
   align-items: start;
   background: var(--surface);
   border: 1px solid var(--border);
+  border-top: 2px solid var(--red);
   padding: 18px;
 }
 
@@ -316,10 +318,11 @@ main section svg {
   height: 230px;
   object-fit: cover;
   object-position: top;
-  filter: saturate(0.8);
+  filter: saturate(0.85);
 }
 
 #heroes article h3 {
+  color: var(--gold);
   margin-top: 2px;
 }
 
@@ -342,14 +345,14 @@ main section svg {
 #timeline article {
   padding: 25px;
   background: var(--surface);
-  border-right: 2px solid var(--copper);
+  border-right: 3px solid var(--red);
 }
 
 #timeline article > p:first-child {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--copper);
+  color: var(--gold);
   font-size: 14px;
 }
 
@@ -361,8 +364,6 @@ main section svg {
   margin-bottom: 0;
 }
 
-/* قسم التسجيل الصوتي */
-
 #sadat-audio {
   position: relative;
   display: grid;
@@ -371,9 +372,15 @@ main section svg {
   gap: 45px;
   overflow: hidden;
   border: 1px solid var(--border);
-  border-right: 3px solid var(--copper);
+  border-right: 4px solid var(--red);
   background:
-    radial-gradient(ellipse at left center, rgba(7, 59, 58, 0.32), transparent 65%),
+    linear-gradient(
+      135deg,
+      rgba(206, 32, 40, 0.12),
+      transparent 45%,
+      rgba(245, 242, 237, 0.04) 70%,
+      rgba(0, 0, 0, 0.3)
+    ),
     var(--surface);
   padding: 55px;
   margin-top: 55px;
@@ -384,7 +391,7 @@ main section svg {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--copper);
+  color: var(--gold);
   font-size: 14px;
   margin-bottom: 14px;
 }
@@ -401,7 +408,7 @@ main section svg {
 #sadat-audio > div:last-child {
   min-width: 0;
   padding: 24px;
-  background: rgba(16, 18, 20, 0.72);
+  background: rgba(16, 16, 16, 0.85);
   border: 1px solid var(--border);
 }
 
@@ -410,7 +417,7 @@ main section svg {
   width: 100%;
   max-width: 100%;
   margin: 0 auto 15px;
-  accent-color: var(--copper);
+  accent-color: var(--red);
 }
 
 #sadat-audio > div:last-child p {
@@ -425,6 +432,7 @@ footer {
   padding: 45px 20px;
   color: var(--muted);
   font-size: 13px;
+  border-top: 2px solid var(--red);
 }
 
 footer p {
@@ -432,10 +440,11 @@ footer p {
 }
 
 footer a {
-  color: var(--copper);
+  color: var(--red);
 }
 
 footer a:hover {
+  color: var(--gold);
   text-decoration: underline;
 }
 
@@ -447,27 +456,57 @@ footer a:hover {
   }
 
   nav label {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: auto;
+    width: 42px;
+    height: 42px;
+    position: relative;
+    z-index: 102;
   }
 
   nav ul {
-    display: none;
-    flex-basis: 100%;
+    display: flex;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding-top: 10px;
+    padding: 8px 16px;
+    background: rgba(25, 25, 25, 0.98);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--red);
+    border-radius: 4px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease;
+    z-index: 101;
+  }
+
+  nav input:checked ~ ul {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   nav ul li a {
     display: block;
-    padding: 10px 5px;
+    padding: 9px 5px;
     border-bottom: 1px solid var(--border);
   }
 
-  nav input:checked ~ ul {
-    display: flex;
+  nav ul li:last-child a {
+    border-bottom: none;
   }
 
   #home {
@@ -486,10 +525,6 @@ footer a:hover {
 
   #home > img {
     height: 420px;
-  }
-
-  #home > div:nth-of-type(2) {
-    margin-top: 0;
   }
 
   #about,
@@ -604,5 +639,15 @@ footer a:hover {
 
   main section h1 {
     letter-spacing: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  nav ul {
+    transition: none;
   }
 }
