@@ -1,6 +1,9 @@
 
 * {
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -13,14 +16,7 @@
   --white: #f5f2ed;
   --black: #101010;
   --gold: #d6ad60;
-  --teal: #073b3a;
   --border: rgba(206, 32, 40, 0.28);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -93,6 +89,7 @@ nav input {
 nav label {
   display: none;
   cursor: pointer;
+  color: var(--white);
 }
 
 nav ul {
@@ -123,6 +120,7 @@ main section {
 
 main section p {
   color: var(--muted);
+  margin-bottom: 17px;
 }
 
 main section > div > p:first-child {
@@ -135,11 +133,11 @@ main section > div > p:first-child {
 }
 
 main section h1 {
+  color: var(--white);
   font-size: clamp(44px, 8vw, 88px);
   line-height: 1.25;
   margin-bottom: 10px;
   letter-spacing: -2px;
-  color: var(--white);
 }
 
 main section h2 {
@@ -155,10 +153,6 @@ main section h3 {
   margin-bottom: 10px;
 }
 
-main section p {
-  margin-bottom: 17px;
-}
-
 main section svg {
   color: var(--gold);
 }
@@ -168,7 +162,7 @@ main section svg {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
-  gap: 45px;
+  gap: 25px 45px;
 }
 
 #home > div:first-child {
@@ -178,12 +172,12 @@ main section svg {
 
 #home > img {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
   width: 100%;
   height: 520px;
   object-fit: cover;
   border-radius: 3px;
-  border: 1px solid rgba(214, 173, 96, 0.45);
+  border: 1px solid rgba(214, 173, 96, 0.4);
   border-bottom: 4px solid var(--red);
 }
 
@@ -220,7 +214,6 @@ main section svg {
 #home > div:nth-of-type(2) {
   grid-row: 2;
   align-self: end;
-  margin-top: 15px;
 }
 
 #home > div:nth-of-type(3) {
@@ -325,12 +318,12 @@ main section svg {
   height: 230px;
   object-fit: cover;
   object-position: top;
-  filter: saturate(0.8);
+  filter: saturate(0.85);
 }
 
 #heroes article h3 {
-  margin-top: 2px;
   color: var(--gold);
+  margin-top: 2px;
 }
 
 #heroes article p {
@@ -435,12 +428,11 @@ main section svg {
 }
 
 footer {
-  position: relative;
   text-align: center;
   padding: 45px 20px;
   color: var(--muted);
   font-size: 13px;
-  overflow: hidden;
+  border-top: 2px solid var(--red);
 }
 
 footer p {
@@ -449,58 +441,11 @@ footer p {
 
 footer a {
   color: var(--red);
-  transition: color 0.25s ease;
 }
 
 footer a:hover {
   color: var(--gold);
   text-decoration: underline;
-}
-
-footer p:last-child {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: fit-content;
-  max-width: 100%;
-  margin: 20px auto 0;
-  padding: 10px 22px;
-  color: var(--text);
-  background: linear-gradient(
-    110deg,
-    rgba(206, 32, 40, 0.13),
-    rgba(245, 242, 237, 0.035) 48%,
-    rgba(0, 0, 0, 0.55)
-  );
-  border: 1px solid rgba(214, 173, 96, 0.3);
-  border-right: 3px solid var(--red);
-  border-radius: 2px;
-  transform: skew(-5deg);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-footer p:last-child::before {
-  content: "";
-  display: block;
-  flex: 0 0 30px;
-  width: 30px;
-  height: 20px;
-  background: linear-gradient(
-    to bottom,
-    #ce2028 0 33.33%,
-    #f5f2ed 33.33% 66.66%,
-    #101010 66.66% 100%
-  );
-  transform: skew(-8deg) rotate(-8deg);
-  border: 1px solid rgba(214, 173, 96, 0.35);
-  box-shadow: 2px 2px 0 rgba(206, 32, 40, 0.18);
-}
-
-footer p:last-child a {
-  color: var(--gold);
-  font-weight: bold;
 }
 
 @media (max-width: 900px) {
@@ -511,35 +456,52 @@ footer p:last-child a {
   }
 
   nav label {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: auto;
+    width: 42px;
+    height: 42px;
+    position: relative;
+    z-index: 102;
   }
 
   nav ul {
-    display: none;
+    display: flex;
     position: absolute;
-    top: calc(100% - 1px);
+    top: calc(100% + 10px);
+    left: 0;
     right: 0;
-    width: min(280px, 90vw);
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     padding: 8px 16px;
-    background: var(--surface);
+    background: rgba(25, 25, 25, 0.98);
     border: 1px solid var(--border);
-    border-top: 2px solid var(--red);
-    border-radius: 0 0 6px 6px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    border-top: 3px solid var(--red);
+    border-radius: 4px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease;
     z-index: 101;
   }
 
   nav input:checked ~ ul {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   nav ul li a {
     display: block;
-    padding: 10px 5px;
+    padding: 9px 5px;
     border-bottom: 1px solid var(--border);
   }
 
@@ -563,10 +525,6 @@ footer p:last-child a {
 
   #home > img {
     height: 420px;
-  }
-
-  #home > div:nth-of-type(2) {
-    margin-top: 0;
   }
 
   #about,
@@ -682,16 +640,14 @@ footer p:last-child a {
   main section h1 {
     letter-spacing: 0;
   }
+}
 
-  footer p:last-child {
-    gap: 8px;
-    padding: 9px 13px;
-    font-size: 12px;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  footer p:last-child::before {
-    flex-basis: 25px;
-    width: 25px;
-    height: 17px;
+  nav ul {
+    transition: none;
   }
 }
